@@ -1,0 +1,195 @@
+.content_detailnews {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.detailnews_right {
+  width: 77%;
+  margin-left: 30px;
+}
+
+.detailnews_right p {
+  margin-bottom: 12px;
+  line-height: 30px;
+  color: #363636;
+}
+
+.detailnews_right-title {
+  margin-bottom: 20px;
+}
+
+.detailnews_right-title p {
+  font-size: 24px;
+  font-weight: 600;
+  color: #363636;
+}
+
+.detailnews_right-title span {
+  font-size: 14px;
+  color: #898989;
+}
+
+.detailnews_right-img {
+  margin-bottom: 20px;
+}
+
+.detailnews_right-img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.detailnews_right-content-img {
+  margin-bottom: 20px;
+}
+
+.detailnews_right-content-img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.detailnews_right-tag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #c1bfbf;
+  ;
+}
+
+.detailnews_right-tag-left i {
+  color: #898989;
+}
+
+.detailnews_right-tag-right {
+  display: flex;
+  align-items: center;
+  gap: 12px
+}
+
+.detailnews_right-tag-right span {
+  color: #898989;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.social-media {
+  border: 0.5px solid #c1bfbf;
+  border-radius: 9999px;
+  padding: 8px;
+}
+
+.social-media i {
+  color: #898989;
+  font-size: 15px;
+}
+
+.detailnews_righ-comment .title {
+  font-size: 18px;
+}
+
+.detailnews_righ-comment-user {
+  display: flex;
+  gap: 10px;
+  padding: 16px 0 16px 0;
+  border-bottom: 1px solid #c1bfbf;
+  ;
+}
+
+.detailnews_righ-comment-user img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+
+.detailnews_righ-comment-user-info p {
+  margin-bottom: 0;
+}
+
+.detailnews_righ-comment-user-info .name {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.detailnews_righ-comment-user-info .date {
+  font-size: 14px;
+  color: #898989;
+}
+
+.detailnews_righ-comment-user-info .comment {
+  font-size: 14px;
+  color: #898989;
+}
+
+.form_comment {
+  margin-top: 50px;
+}
+
+.form_comment .title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form_comment .form_comment-group input {
+  width: 100%;
+  padding: 12px 10px;
+  border: 1px solid #3333;
+  margin-bottom: 14px;
+  font-size: 16px;
+  outline: none;
+}
+
+.form_comment .form_comment-group textarea {
+  width: 100%;
+  height: 200px;
+  outline: none;
+  padding: 12px 10px;
+  border: 1px solid #3333;
+  margin-bottom: 14px;
+  font-size: 16px;
+}
+
+.form_comment .form_comment-group button {
+  padding: 10px 16px;
+  background-color: var(--green-color);
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-size: 16px;
+}
+
+.block-recent {
+  margin-top: 60px;
+}
+
+.block-recent .title {
+  font-size: 24px
+}
+
+.block-recent ul {
+  list-style: none;
+  padding: 0;
+}
+
+.block-recent ul li {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.block-recent ul li a {
+  text-decoration: none;
+  color: #363636
+}
+
+.block-recent ul li a i {
+  margin-right: 10px;
+}
