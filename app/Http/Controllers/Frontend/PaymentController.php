@@ -42,11 +42,11 @@ class PaymentController extends Controller
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
         // $vnp_Returnurl = "https://localhost/vnpay_php/vnpay_return.php";
         $vnp_Returnurl = "http://127.0.0.1:8000/user/thank";
-        $vnp_TmnCode = "GLUFRFYC";//Mã website tại VNPAY 
-        $vnp_HashSecret = "HXQTGAEZFUVVZKLVBFEIBZCEYYVIXWBR"; //Chuỗi bí mật
+        $vnp_TmnCode = "CQINE5RN";//Mã website tại VNPAY 
+        $vnp_HashSecret = "QDHTMTV3NJNLS7POHLUXRQI94ETCZ2HE"; //Chuỗi bí mật
 
         $vnp_TxnRef = rand(800, 900); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
-        $vnp_OrderInfo = "Thanh toán đơn hàng từ FreshVegeta Shop" ; 
+        $vnp_OrderInfo = "Thanh toán đơn hàng từ" ; 
         $vnp_OrderType = "FreshVegeta Shop";
         $vnp_Amount = $total * 100;
         $vnp_Locale = "VN";
