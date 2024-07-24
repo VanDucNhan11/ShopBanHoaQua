@@ -32,9 +32,7 @@ use App\Http\Controllers\Frontend\PaymentController;
 */
 
 // Change the default route to redirect to the user index page
-Route::get('/', function () {
-    return redirect()->route('user_index');
-});
+Route::get('/', [UserController::class, 'index'])->name('user_index');
 
 // ADMIN ROUTES
 Route::group([
@@ -99,12 +97,12 @@ Route::group([
     'prefix' => 'user', 
     'middleware' => 'checklogin',
 ], function () {
-    // INDEX
+    // INDEX (this route does not require auth middleware)
     Route::get('/index', [UserController::class, 'index'])->name('user_index');
 
     // PROFILE
-    Route::get('/profile', [UserController::class, 'profile']);
-    Route::post('/profile', [UserController::class, 'update'])->name('user.update');
+    Route::get('/profile', [UserController::class, 'profile'])->middleware(['auth']);
+    Route::post('/profile', [UserController::class, 'update'])->middleware(['auth'])->name('user.update');
 
     // PRODUCT
     Route::get('/product', [App\Http\Controllers\Frontend\ProductController::class, 'index'])->name('user_product');
@@ -129,20 +127,20 @@ Route::group([
     // Route::get('/deletesession', [App\Http\Controllers\Frontend\ProductController::class, 'deleteSession']);
 
     // LOG OUT
-    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('user_logout');
+    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('user_logout')->middleware(['auth']);
 
     // EMAIL
     Route::post('email/verification-notification', [UserEmailVerificationNotificationController::class, 'store'])
-                ->name('user.verification.send');
+                ->name('user.verification.send')->middleware(['auth']);
     Route::get('verify-email', [UserEmailVerificationPromptController::class, '__invoke'])
-                ->name('user.verification.notice');
+                ->name('user.verification.notice')->middleware(['auth']);
     Route::get('verify-email/{id}/{hash}', [UserVerifyEmailController::class, '__invoke'])
-                ->name('user.verification.verify');
+                ->name('user.verification.verify')->middleware(['auth']);
 
     // CHECKOUT
-    Route::get('/checkout', [PaymentController::class, 'index']);
-    Route::get('/thank', [PaymentController::class, 'thank']);
-    Route::post('/vnpay_payment', [PaymentController::class, 'vnpay_payment']);
+    Route::get('/checkout', [PaymentController::class, 'index'])->middleware(['auth']);
+    Route::get('/thank', [PaymentController::class, 'thank'])->middleware(['auth']);
+    Route::post('/vnpay_payment', [PaymentController::class, 'vnpay_payment'])->middleware(['auth']);
 });
 
 require __DIR__.'/auth.php';
